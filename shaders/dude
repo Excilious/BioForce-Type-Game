@@ -1,0 +1,39 @@
+#version 330 core
+
+out vec4 frag_color;
+
+in vec2 uv;
+in vec3 frag_pos;
+in vec3 frag_normal;  // Now passed from vertex shader
+in float shading;
+flat in int tex_id;
+
+vec3 fog_color = vec3(-0.05);
+
+const vec3 gamma = vec3(2.2);
+const vec3 inv_gamma = 1 / gamma;
+
+uniform sampler2DArray u_texture_array_0;
+uniform vec3 LightPos;
+
+void main() {
+    vec3 norm = normalize(frag_normal);  // Directly use vertex normal
+    vec3 lightdir = normalize(LightPos - frag_pos);
+    float diff = max(dot(norm, lightdir), 0.0);
+
+    vec3 ambience = 0.1 * vec3(1.0);
+    vec3 diffuse = diff * vec3(1.0);
+
+    vec3 tex_col = texture(u_texture_array_0, vec3(uv, tex_id)).rgb;
+    tex_col = pow(tex_col, gamma);
+
+    tex_col *= shading;
+
+    // Fog effect
+    float fog_dist = gl_FragCoord.z / gl_FragCoord.w;
+    tex_col = mix(tex_col, fog_color, (1.0 - exp2(-0.015 * fog_dist * fog_dist)));
+
+    tex_col = pow(tex_col, inv_gamma);
+    vec3 result = (ambience + diffuse) * tex_col;
+    frag_color = vec4(result, 1.0);
+}
