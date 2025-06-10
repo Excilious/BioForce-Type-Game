@@ -1,7 +1,7 @@
 # BioForce
 
 This is not meant as a commercial game, just for a fun project.
-None of the assets are used in a commercial setting.w
+None of the assets are used in a commercial setting.
 
 A clone of StanislavPetrovV Wolfenstien 3D clone (https://github.com/StanislavPetrovV/Wolfenstein-3D-Clone) Slightly edited with other features but retains the same/similar code. Licence can be found within the repository! 
 
