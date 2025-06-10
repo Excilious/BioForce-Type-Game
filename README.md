@@ -1,12 +1,10 @@
-# Wolfenstein-3D-Clone
-Wolfenstein 3D using OpenGL
+# BioForce/Wolfenstein-3D-Clone
 
-Wolfeinstein 3D clone written in Python using Pygame, ModernGL, Numpy, PyTMX, PyGLM
+This is not meant as a commercial game, just for a fun project.
+None of the assets are used in a commercial setting.w
 
-You can create your own level in the Tiled editor, see more details here:
-https://youtu.be/yJXuvK_eLrQ?si=ShmzXXb1uSqtDC4u
+A clone of StanislavPetrovV Wolfenstien 3D clone (https://github.com/StanislavPetrovV/Wolfenstein-3D-Clone) Slightly edited with other features but retains the same/similar code. Licence can be found within the repository. 
 
-![wolfenstein](/screenshot/0.jpg)
-
-
-![wolfenstein](/screenshot/1.jpg)
+![image](https://github.com/user-attachments/assets/c50117a7-37f1-4986-a840-98e216572813)
+![image](https://github.com/user-attachments/assets/e22b3524-7eda-4dd1-8032-529d5d50b7f6)
+![image](https://github.com/user-attachments/assets/ceb4d308-60e3-4fcf-a7a6-47ba584001c3)
